@@ -4,15 +4,47 @@ using UnityEngine;
 
 public class AlienBullet : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    private Rigidbody2D rigidBody;
+    public float speed = 30;
+    public Sprite explodedShipImage;
+
     void Start()
     {
-        
+
+        rigidBody = GetComponent<Rigidbody2D>();
+        rigidBody.velocity = Vector2.down * speed;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        
+        if (col.tag == "TopWall")
+        {
+            Destroy(gameObject);
+        }
+
+        if (col.gameObject.tag == "Player")
+        {
+            SoundManager.Instance.PlayOneShot(SoundManager.Instance.shipExplosion);
+
+            col.GetComponent<SpriteRenderer>().sprite = explodedShipImage;
+
+            Destroy(gameObject);
+
+            DestroyObject(col.gameObject, 0.5f);
+
+        }
+
+        if (col.tag == "Shield")
+        {
+            Destroy(gameObject);
+            DestroyObject(col.gameObject);
+        }
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
