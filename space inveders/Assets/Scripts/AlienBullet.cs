@@ -19,7 +19,7 @@ public class AlienBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "TopWall")
+        if (col.tag == "Wall")
         {
             Destroy(gameObject);
         }

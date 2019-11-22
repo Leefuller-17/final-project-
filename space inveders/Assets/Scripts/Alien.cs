@@ -51,7 +51,7 @@ public class Alien : MonoBehaviour
     void MoveDown()
     {
         Vector2 position = transform.position;
-        position.y -= 1;
+        position.y -= 4.5f;
         transform.position = position;
     }
 
@@ -85,8 +85,6 @@ public class Alien : MonoBehaviour
             if(spriteRenderer.sprite == startingImage)
             {
                 spriteRenderer.sprite = altImage;
-                SoundManager.Instance.PlayOneShot(SoundManager.Instance.alienBuzz1);
-
             }
             else
             {
@@ -95,6 +93,36 @@ public class Alien : MonoBehaviour
             }
 
             yield return new WaitForSeconds(secBeforeSpriteChange);
+        }
+    }
+
+    void FixedUpdate()
+    {
+
+        if (Time.time > baseFireWaitTime)
+        {
+
+            baseFireWaitTime = baseFireWaitTime +
+                Random.Range(minFireRateTime, maxFireRateTime);
+
+            Instantiate(alienBullet, transform.position, Quaternion.identity);
+
+        }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag == "Player")
+        {
+            SoundManager.Instance.PlayOneShot(SoundManager.Instance.shipExplosion);
+
+            col.GetComponent<SpriteRenderer>().sprite = explodedShipImage;
+
+            Destroy(gameObject);
+
+            DestroyObject(col.gameObject, 0.5f);
         }
     }
 

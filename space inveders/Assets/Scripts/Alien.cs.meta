@@ -3,7 +3,12 @@ guid: 849fe6014df2ff248b826b77791a7c08
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rigidBody: {instanceID: 0}
+  - startingImage: {instanceID: 0}
+  - altImage: {instanceID: 0}
+  - alienBullet: {instanceID: 0}
+  - explodedShipImage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
