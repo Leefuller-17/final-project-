@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AlienBullet : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class AlienBullet : MonoBehaviour
             Destroy(gameObject);
 
             DestroyObject(col.gameObject, 0.5f);
+            SceneManager.LoadScene(2);
 
         }
 
@@ -47,4 +49,5 @@ public class AlienBullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
 }
