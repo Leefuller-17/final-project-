@@ -50,4 +50,13 @@ public class AlienBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //public void Reset()
+    //{
+    //    if (explodedShipImage)
+    //    {
+         
+          
+    //    }
+
+    //}
 }
