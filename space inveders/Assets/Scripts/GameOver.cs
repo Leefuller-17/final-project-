@@ -8,5 +8,9 @@ public class GameOver : MonoBehaviour
     public void ExitToMainMenu()
     {
         SceneManager.LoadScene(0);
+        //if (Input.GetButton("ExitToMainMenu")
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene());
+        //}
     }
 }
