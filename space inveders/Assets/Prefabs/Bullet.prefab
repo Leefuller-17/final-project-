@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 791255007925188542}
   - component: {fileID: 860219747364331081}
   - component: {fileID: -266836846287007577}
+  - component: {fileID: 388325050427730230}
   m_Layer: 10
   m_Name: Bullet
   m_TagString: Bullet
@@ -145,3 +146,16 @@ MonoBehaviour:
   speed: 30
   explodedAlienImage: {fileID: -2885940107258461023, guid: 9f51cf1a7530f6a479336038920f997b,
     type: 3}
+--- !u!114 &388325050427730230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066212928551954950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7ea19dbb97c6e4885b58df81b4e44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Alien: 0

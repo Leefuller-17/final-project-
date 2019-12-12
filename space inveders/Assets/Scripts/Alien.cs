@@ -99,7 +99,7 @@ public class Alien : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log("whats the time: " + Time.time + " " + baseFireWaitTime);
+        //Debug.Log("whats the time: " + Time.time + " " + baseFireWaitTime);
 
         if (Time.timeSinceLevelLoad > baseFireWaitTime)
         {
@@ -107,7 +107,7 @@ public class Alien : MonoBehaviour
             baseFireWaitTime = baseFireWaitTime +
                 Random.Range(minFireRateTime, maxFireRateTime);
             Instantiate(alienBullet, transform.position, Quaternion.identity);
-            Debug.Log("alien bullet made");
+           // Debug.Log("alien bullet made");
           
         }
 
