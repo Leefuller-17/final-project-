@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpaceShip : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SpaceShip : MonoBehaviour
 
 
     public GameObject theBullet;
+    private int remainingAliens;
 
     void FixedUpdate()
     {

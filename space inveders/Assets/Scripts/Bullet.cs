@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
@@ -46,6 +47,15 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             DestroyObject(col.gameObject);
         }
+
+        GameObject[] aliens = GameObject.FindGameObjectsWithTag("Alien");
+
+        if (aliens.Length == 0)
+        {
+            
+            SceneManager.LoadScene(2);
+          
+        }
     }
 
 
@@ -64,5 +74,7 @@ public class Bullet : MonoBehaviour
         score += 10;
 
         textUIComp.text = score.ToString();
+
+       GameObject.Find("Currency").GetComponent<Currency>().IncreaseTextUICurrency();
     }
 }

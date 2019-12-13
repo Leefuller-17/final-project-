@@ -1,25 +1,23 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class AddUpMoney : MonoBehaviour
+namespace store_value_in_array
 {
 
-    Currency script;
-
-    public int addAmount;
-
-    void Start()
+    class AddUpMoney : MonoBehaviour
     {
-        script = GameObject.FindWithTag("Alien").GetComponent<Currency>();
-    }
-
-    void OnTriggerEnter(Collider obj)
-    {
-        if (obj.gameObject.tag == "Bullet")
+        Currency currency;
+        int score;
+        void Start()
         {
-            script.Alien += addAmount;
-            Destroy(gameObject);
+            //get the value from playe prefs
+            score = PlayerPrefs.GetInt("Score", 0);
+            GetComponent<Text>().text = score.ToString();
+
         }
     }
 }

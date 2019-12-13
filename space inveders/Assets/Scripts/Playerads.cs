@@ -1,6 +1,8 @@
 ﻿using UnityEngine.Advertisements;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+
 public class Playerads : MonoBehaviour
 {
 
@@ -19,6 +21,10 @@ public class Playerads : MonoBehaviour
         {
             case ShowResult.Finished:
                 Debug.Log("palyer finished add + 5 coins");
+                int score = PlayerPrefs.GetInt("Score");
+                PlayerPrefs.SetInt("Score", 30 + score);
+
+                GameObject.Find("Text").GetComponent<Text>().text = score.ToString();
                 break;
             case ShowResult.Skipped:
                 Debug.Log("player skipped ad thefore there is no reward");
