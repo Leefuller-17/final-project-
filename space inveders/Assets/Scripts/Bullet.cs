@@ -13,12 +13,12 @@ public class Bullet : MonoBehaviour
 
     public Sprite explodedAlienImage;
 
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
 
-        rigidBody.velocity = Vector2.up * speed;
+        rigidBody.velocity = Vector2.right * speed;
 
 
     }
